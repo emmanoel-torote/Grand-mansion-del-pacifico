@@ -25,7 +25,6 @@
             --white: #ffffff;
             --font-serif: 'Cormorant Garamond', serif;
             --font-sans: 'Inter', sans-serif;
-            --header-height: 82px;
         }
 
         html {
@@ -50,18 +49,18 @@
         }
 
         h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-size: clamp(2rem, 5vw, 4.5rem);
             font-weight: 300;
             letter-spacing: -0.02em;
         }
 
         h2 {
-            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-size: clamp(1.75rem, 4vw, 3.5rem);
             margin-bottom: 1rem;
         }
 
         h3 {
-            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-size: clamp(1.25rem, 3vw, 2rem);
             margin-bottom: 0.75rem;
         }
 
@@ -74,54 +73,57 @@
             background: rgba(241, 236, 231, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 0.75rem 0;
+            padding: 1rem 0;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            height: var(--header-height);
-            display: flex;
-            align-items: center;
         }
 
         nav {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
+            gap: 1rem;
         }
 
         .logo {
-            height: 50px;
-            display: block;
+            height: 45px;
+            flex-shrink: 0;
         }
 
         .nav-contact {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
 
         .phone-link {
             color: var(--blue-primary);
             text-decoration: none;
             font-weight: 500;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .phone-link:hover {
+            color: var(--blue-dark);
         }
 
         .cta-button {
             background: var(--blue-primary);
             color: var(--white);
-            padding: 0.75rem 1.5rem;
+            padding: 0.65rem 1.25rem;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            white-space: nowrap;
         }
 
         .cta-button:hover {
@@ -131,10 +133,10 @@
 
         /* Hero Section */
         .hero {
-            margin-top: var(--header-height);
+            margin-top: 77px;
             position: relative;
-            height: 90vh;
-            min-height: 650px;
+            height: 85vh;
+            min-height: 500px;
             overflow: hidden;
         }
 
@@ -182,17 +184,17 @@
 
         .carousel-nav {
             position: absolute;
-            bottom: 30px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 12px;
+            gap: 10px;
             z-index: 20;
         }
 
         .carousel-dot {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.5);
             border: none;
@@ -202,8 +204,8 @@
 
         .carousel-dot.active {
             background: var(--white);
-            width: 32px;
-            border-radius: 6px;
+            width: 28px;
+            border-radius: 5px;
         }
 
         .carousel-arrow {
@@ -213,8 +215,8 @@
             background: rgba(255, 255, 255, 0.2);
             border: none;
             color: var(--white);
-            font-size: 2rem;
-            padding: 1rem 1.25rem;
+            font-size: 1.75rem;
+            padding: 0.75rem 1rem;
             cursor: pointer;
             transition: all 0.3s ease;
             z-index: 20;
@@ -226,11 +228,11 @@
         }
 
         .carousel-arrow.prev {
-            left: 20px;
+            left: 15px;
         }
 
         .carousel-arrow.next {
-            right: 20px;
+            right: 15px;
         }
 
         /* Hero Content */
@@ -244,62 +246,55 @@
             z-index: 10;
             width: 90%;
             max-width: 900px;
+            padding: 1rem;
         }
 
         .hero-subtitle {
             font-family: var(--font-sans);
-            font-size: 1rem;
+            font-size: 0.85rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             opacity: 0.95;
         }
 
         .hero-title {
             color: var(--white);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             text-shadow: 0 2px 20px rgba(0,0,0,0.3);
         }
 
         .hero-price {
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(1.75rem, 4vw, 3rem);
             font-weight: 300;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.35rem;
             font-family: var(--font-serif);
         }
 
         .hero-price-mxn {
-            font-size: 1.1rem;
+            font-size: 1rem;
             opacity: 0.9;
             font-weight: 300;
         }
 
         .hero-location {
-            font-size: 1.1rem;
-            margin: 1.5rem 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
+            font-size: 0.95rem;
+            margin: 1rem 0;
         }
 
         .hero-specs {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 1.5rem auto;
+            max-width: 600px;
         }
 
         .spec-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.5rem;
-        }
-
-        .spec-icon {
-            font-size: 1.5rem;
+            gap: 0.35rem;
         }
 
         .spec-value {
@@ -309,17 +304,17 @@
         }
 
         .spec-label {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             opacity: 0.9;
         }
 
         .hero-cta {
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
 
         .hero-cta .cta-button {
-            font-size: 1.1rem;
-            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            padding: 0.9rem 2rem;
         }
 
         /* Container */
@@ -331,7 +326,7 @@
 
         /* Section */
         section {
-            padding: 5rem 0;
+            padding: 4rem 0;
         }
 
         /* Story Section */
@@ -346,7 +341,7 @@
         }
 
         .story-intro {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-family: var(--font-serif);
             color: var(--blue-primary);
             margin-bottom: 2rem;
@@ -354,7 +349,7 @@
         }
 
         .story-text {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-secondary);
             margin-bottom: 1.5rem;
             line-height: 1.8;
@@ -367,12 +362,12 @@
 
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .section-subtitle {
             color: var(--blue-primary);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             margin-bottom: 1rem;
@@ -381,14 +376,14 @@
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
+            gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .feature-card {
             background: var(--white);
-            padding: 2.5rem 2rem;
+            padding: 2rem 1.5rem;
             border-radius: 8px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -400,13 +395,20 @@
         }
 
         .feature-icon {
-            font-size: 2.5rem;
-            color: var(--blue-primary);
-            margin-bottom: 1.5rem;
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 1.25rem;
+            background: var(--blue-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
         }
 
         .feature-title {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 0.75rem;
             color: var(--text-primary);
         }
@@ -414,13 +416,14 @@
         .feature-description {
             color: var(--text-secondary);
             line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         /* Two Column Section */
         .two-column {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
             align-items: start;
         }
 
@@ -434,11 +437,12 @@
         }
 
         .feature-list li {
-            padding: 0.75rem 0;
+            padding: 0.65rem 0;
             border-bottom: 1px solid rgba(0,0,0,0.08);
             display: flex;
-            align-items: center;
-            gap: 1rem;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.95rem;
         }
 
         .feature-list li:last-child {
@@ -447,7 +451,9 @@
 
         .checkmark {
             color: var(--blue-primary);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-top: 2px;
         }
 
         /* Gallery */
@@ -457,8 +463,8 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
         }
 
         .gallery-item {
@@ -517,14 +523,14 @@
 
         .investment-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 2.5rem;
         }
 
         .investment-card {
             background: var(--bg-primary);
-            padding: 3rem 2rem;
+            padding: 2.5rem 2rem;
             border-radius: 8px;
             text-align: center;
         }
@@ -537,6 +543,7 @@
         .investment-card p {
             color: var(--text-secondary);
             line-height: 1.7;
+            font-size: 0.95rem;
         }
 
         /* Agent Section */
@@ -546,8 +553,8 @@
 
         .agent-container {
             display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 4rem;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
             align-items: start;
             max-width: 1000px;
             margin: 0 auto;
@@ -572,7 +579,7 @@
 
         .agent-title {
             color: var(--text-secondary);
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin-bottom: 1.5rem;
         }
 
@@ -580,6 +587,7 @@
             color: var(--text-secondary);
             line-height: 1.8;
             margin-bottom: 2rem;
+            font-size: 0.95rem;
         }
 
         .agent-contact-buttons {
@@ -589,7 +597,7 @@
         }
 
         .contact-btn {
-            padding: 0.75rem 1.5rem;
+            padding: 0.7rem 1.35rem;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 500;
@@ -597,6 +605,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            font-size: 0.9rem;
         }
 
         .contact-btn-primary {
@@ -627,7 +636,7 @@
         .location-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
         }
 
         .location-list {
@@ -635,11 +644,12 @@
         }
 
         .location-list li {
-            padding: 1rem 0;
+            padding: 0.85rem 0;
             border-bottom: 1px solid rgba(0,0,0,0.08);
             display: flex;
             align-items: center;
             gap: 1rem;
+            font-size: 0.95rem;
         }
 
         .distance {
@@ -651,7 +661,7 @@
         .map-container {
             border-radius: 8px;
             overflow: hidden;
-            height: 500px;
+            height: 450px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
@@ -673,18 +683,18 @@
 
         .faq-item {
             background: var(--white);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             border-radius: 8px;
             overflow: hidden;
         }
 
         .faq-question {
             width: 100%;
-            padding: 1.5rem 2rem;
+            padding: 1.25rem 1.75rem;
             background: var(--white);
             border: none;
             text-align: left;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 600;
             color: var(--text-primary);
             cursor: pointer;
@@ -702,6 +712,7 @@
             font-size: 1.5rem;
             color: var(--blue-primary);
             transition: transform 0.3s ease;
+            flex-shrink: 0;
         }
 
         .faq-item.active .faq-icon {
@@ -715,9 +726,10 @@
         }
 
         .faq-answer-content {
-            padding: 0 2rem 1.5rem;
+            padding: 0 1.75rem 1.25rem;
             color: var(--text-secondary);
             line-height: 1.8;
+            font-size: 0.95rem;
         }
 
         .faq-item.active .faq-answer {
@@ -732,13 +744,13 @@
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.35rem;
         }
 
         .form-group label {
@@ -746,17 +758,18 @@
             margin-bottom: 0.5rem;
             font-weight: 500;
             color: var(--text-primary);
+            font-size: 0.9rem;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 0.75rem 1rem;
+            padding: 0.7rem 0.9rem;
             border: 1px solid rgba(0,0,0,0.15);
             border-radius: 4px;
             font-family: var(--font-sans);
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: border-color 0.3s ease;
         }
 
@@ -769,17 +782,17 @@
 
         .form-group textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 110px;
         }
 
         .submit-button {
             width: 100%;
             background: var(--blue-primary);
             color: var(--white);
-            padding: 1rem;
+            padding: 0.9rem;
             border: none;
             border-radius: 4px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -791,24 +804,25 @@
 
         .contact-info-card {
             background: var(--bg-primary);
-            padding: 2.5rem;
+            padding: 2.25rem;
             border-radius: 8px;
             height: fit-content;
         }
 
         .contact-info-item {
-            margin-bottom: 2rem;
+            margin-bottom: 1.75rem;
         }
 
         .contact-info-item h4 {
             color: var(--blue-primary);
             margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
 
         .contact-info-item p {
             color: var(--text-secondary);
             line-height: 1.6;
+            font-size: 0.9rem;
         }
 
         .contact-info-item a {
@@ -821,24 +835,25 @@
         footer {
             background: var(--text-primary);
             color: var(--white);
-            padding: 3rem 0 1.5rem;
+            padding: 2.5rem 0 1.25rem;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 2rem;
+            gap: 2.5rem;
+            margin-bottom: 1.75rem;
         }
 
         .footer-agent h4 {
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            margin-bottom: 0.85rem;
+            font-size: 1.2rem;
         }
 
         .footer-contact p {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.45rem;
             opacity: 0.9;
+            font-size: 0.9rem;
         }
 
         .footer-contact a {
@@ -847,11 +862,11 @@
         }
 
         .footer-bottom {
-            padding-top: 2rem;
+            padding-top: 1.75rem;
             border-top: 1px solid rgba(255,255,255,0.1);
             text-align: center;
             opacity: 0.7;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         /* Success Message */
@@ -859,10 +874,11 @@
             display: none;
             background: #4ade80;
             color: white;
-            padding: 1rem;
+            padding: 0.9rem;
             border-radius: 4px;
-            margin-top: 1rem;
+            margin-top: 0.9rem;
             text-align: center;
+            font-size: 0.9rem;
         }
 
         .success-message.show {
@@ -881,44 +897,140 @@
             }
 
             .agent-photo-wrapper {
-                max-width: 300px;
+                max-width: 280px;
                 margin: 0 auto;
             }
 
-            .hero-specs {
-                gap: 1.5rem;
-            }
-
-            .carousel-arrow {
-                padding: 0.75rem 1rem;
-                font-size: 1.5rem;
+            .map-container {
+                height: 350px;
             }
 
             section {
                 padding: 3rem 0;
             }
+
+            .container {
+                padding: 0 1.25rem;
+            }
         }
 
         @media (max-width: 640px) {
-            .nav-contact {
-                gap: 1rem;
+            nav {
+                padding: 0 1rem;
+            }
+
+            .logo {
+                height: 38px;
             }
 
             .phone-link {
-                font-size: 0.9rem;
+                font-size: 0.85rem;
             }
 
             .cta-button {
-                padding: 0.6rem 1rem;
-                font-size: 0.9rem;
+                padding: 0.55rem 0.9rem;
+                font-size: 0.85rem;
             }
 
             .container {
                 padding: 0 1rem;
             }
 
+            .hero {
+                margin-top: 69px;
+                height: 75vh;
+                min-height: 450px;
+            }
+
+            .hero-content {
+                padding: 0.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.75rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .hero-title {
+                margin-bottom: 0.75rem;
+            }
+
+            .hero-price {
+                margin-bottom: 0.25rem;
+            }
+
+            .hero-price-mxn {
+                font-size: 0.85rem;
+            }
+
+            .hero-location {
+                font-size: 0.85rem;
+                margin: 0.75rem 0;
+            }
+
             .hero-specs {
-                flex-direction: column;
+                gap: 0.75rem;
+                margin: 1rem auto;
+            }
+
+            .spec-value {
+                font-size: 1.25rem;
+            }
+
+            .spec-label {
+                font-size: 0.7rem;
+            }
+
+            .hero-cta {
+                margin-top: 1rem;
+            }
+
+            .hero-cta .cta-button {
+                font-size: 0.9rem;
+                padding: 0.75rem 1.5rem;
+            }
+
+            .carousel-arrow {
+                padding: 0.55rem 0.75rem;
+                font-size: 1.4rem;
+            }
+
+            .carousel-arrow.prev {
+                left: 8px;
+            }
+
+            .carousel-arrow.next {
+                right: 8px;
+            }
+
+            .carousel-nav {
+                bottom: 12px;
+            }
+
+            section {
+                padding: 2.5rem 0;
+            }
+
+            .story-intro {
+                font-size: 1.1rem;
+            }
+
+            .story-text {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .nav-contact {
+                gap: 0.5rem;
+            }
+
+            .phone-link {
+                display: none;
+            }
+
+            .hero-specs {
+                grid-template-columns: repeat(2, 1fr);
                 gap: 1rem;
             }
         }
@@ -930,9 +1042,7 @@
         <nav>
             <img src="images/rare-logo.png" alt="Ricardo Amigo Real Estate" class="logo">
             <div class="nav-contact">
-                <a href="tel:+526122381676" class="phone-link">
-                    📞 +52 612-238-1676
-                </a>
+                <a href="tel:+526122381676" class="phone-link">+52 612-238-1676</a>
                 <a href="#contact" class="cta-button">Schedule Viewing</a>
             </div>
         </nav>
@@ -976,28 +1086,22 @@
             <div class="hero-price">$2,270,000 <span style="font-size: 0.6em;">USD</span></div>
             <div class="hero-price-mxn">$39,616,040 MXN</div>
             
-            <div class="hero-location">
-                📍 Las Playitas, Todos Santos, Baja California Sur
-            </div>
+            <div class="hero-location">Las Playitas, Todos Santos, Baja California Sur</div>
 
             <div class="hero-specs">
                 <div class="spec-item">
-                    <div class="spec-icon">🛏</div>
                     <div class="spec-value">4</div>
                     <div class="spec-label">Bedrooms</div>
                 </div>
                 <div class="spec-item">
-                    <div class="spec-icon">🚿</div>
                     <div class="spec-value">5.5</div>
                     <div class="spec-label">Bathrooms</div>
                 </div>
                 <div class="spec-item">
-                    <div class="spec-icon">📐</div>
                     <div class="spec-value">3,712</div>
                     <div class="spec-label">sqft Built</div>
                 </div>
                 <div class="spec-item">
-                    <div class="spec-icon">🏡</div>
                     <div class="spec-value">4.2</div>
                     <div class="spec-label">Acres</div>
                 </div>
@@ -1044,35 +1148,35 @@
                     <ul class="feature-list">
                         <li>
                             <span class="checkmark">✓</span>
-                            Double-glazed windows imported from Germany
+                            <span>Double-glazed windows imported from Germany</span>
                         </li>
                         <li>
                             <span class="checkmark">✓</span>
-                            Marine mahogany doors with superior Italian quality
+                            <span>Marine mahogany doors with superior Italian quality</span>
                         </li>
                         <li>
                             <span class="checkmark">✓</span>
-                            Hand-crafted Saltillo tiles from Dolores Hidalgo
+                            <span>Hand-crafted Saltillo tiles from Dolores Hidalgo</span>
                         </li>
                         <li>
                             <span class="checkmark">✓</span>
-                            Venetian mosaic throughout pool and sauna
+                            <span>Venetian mosaic throughout pool and sauna</span>
                         </li>
                         <li>
                             <span class="checkmark">✓</span>
-                            Gourmet Italian-style chef's kitchen
+                            <span>Gourmet Italian-style chef's kitchen</span>
                         </li>
                         <li>
                             <span class="checkmark">✓</span>
-                            Designer appliances discreetly integrated
+                            <span>Designer appliances discreetly integrated</span>
                         </li>
                         <li>
                             <span class="checkmark">✓</span>
-                            120m² saltwater infinity pool
+                            <span>120m² saltwater infinity pool</span>
                         </li>
                         <li>
                             <span class="checkmark">✓</span>
-                            Private sauna with Venetian finishes
+                            <span>Private sauna with Venetian finishes</span>
                         </li>
                     </ul>
                 </div>
@@ -1082,35 +1186,35 @@
                     <ul class="feature-list">
                         <li>
                             <span class="checkmark">✓</span>
-                            Latest generation Victron solar system
+                            <span>Latest generation Victron solar system</span>
                         </li>
                         <li>
                             <span class="checkmark">✓</span>
-                            Lithium battery backup
+                            <span>Lithium battery backup</span>
                         </li>
                         <li>
                             <span class="checkmark">✓</span>
-                            Private well water supply
+                            <span>Private well water supply</span>
                         </li>
                         <li>
                             <span class="checkmark">✓</span>
-                            70m² storage/garage with service quarters
+                            <span>70m² storage/garage with service quarters</span>
                         </li>
                         <li>
                             <span class="checkmark">✓</span>
-                            Laundry room and kitchenette
+                            <span>Laundry room and kitchenette</span>
                         </li>
                         <li>
                             <span class="checkmark">✓</span>
-                            Multiple outdoor living spaces
+                            <span>Multiple outdoor living spaces</span>
                         </li>
                         <li>
                             <span class="checkmark">✓</span>
-                            BBQ garden with outdoor entertaining area
+                            <span>BBQ garden with outdoor entertaining area</span>
                         </li>
                         <li>
                             <span class="checkmark">✓</span>
-                            Cobblestone entrance pathway
+                            <span>Cobblestone entrance pathway</span>
                         </li>
                     </ul>
                 </div>
@@ -1161,7 +1265,7 @@
             <div class="section-header">
                 <div class="section-subtitle">Experience From Anywhere</div>
                 <h2>3D Virtual Tour</h2>
-                <p style="max-width: 700px; margin: 1rem auto; color: var(--text-secondary);">
+                <p style="max-width: 700px; margin: 1rem auto; color: var(--text-secondary); font-size: 0.95rem;">
                     Explore every room and outdoor space with our immersive Matterport tour. Walk through the villa as if you were there.
                 </p>
             </div>
@@ -1183,7 +1287,7 @@
             <div class="section-header">
                 <div class="section-subtitle">Multiple Possibilities</div>
                 <h2>Investment Opportunities</h2>
-                <p style="max-width: 800px; margin: 1rem auto; color: var(--text-secondary);">
+                <p style="max-width: 800px; margin: 1rem auto; color: var(--text-secondary); font-size: 0.95rem;">
                     This exceptional property offers versatility for various visions—from private family compound to thriving hospitality business.
                 </p>
             </div>
@@ -1239,15 +1343,9 @@
                     </p>
 
                     <div class="agent-contact-buttons">
-                        <a href="tel:+526122381676" class="contact-btn contact-btn-primary">
-                            📞 Call Me
-                        </a>
-                        <a href="mailto:perla@ricardoamigo.com" class="contact-btn contact-btn-secondary">
-                            📧 Email Me
-                        </a>
-                        <a href="https://wa.me/526122381676" class="contact-btn contact-btn-secondary">
-                            💬 WhatsApp
-                        </a>
+                        <a href="tel:+526122381676" class="contact-btn contact-btn-primary">Call Me</a>
+                        <a href="mailto:perla@ricardoamigo.com" class="contact-btn contact-btn-secondary">Email Me</a>
+                        <a href="https://wa.me/526122381676" class="contact-btn contact-btn-secondary">WhatsApp</a>
                     </div>
                 </div>
             </div>
@@ -1260,7 +1358,7 @@
             <div class="section-header">
                 <div class="section-subtitle">Perfectly Positioned</div>
                 <h2>The Location</h2>
-                <p style="max-width: 800px; margin: 1rem auto; color: var(--text-secondary);">
+                <p style="max-width: 800px; margin: 1rem auto; color: var(--text-secondary); font-size: 0.95rem;">
                     Las Playitas offers the perfect balance—close enough to Todos Santos' amenities, yet far enough to guarantee privacy and tranquility. You're positioned in an emerging area with first-mover advantage, commanding views that will never be obstructed.
                 </p>
             </div>
@@ -1295,14 +1393,14 @@
                         </li>
                     </ul>
 
-                    <div style="margin-top: 3rem;">
+                    <div style="margin-top: 2.5rem;">
                         <h4 style="color: var(--blue-primary); margin-bottom: 1rem;">Nearby in Todos Santos</h4>
                         <ul class="location-list">
-                            <li>🍽️ World-class restaurants & cafes</li>
-                            <li>🎨 Art galleries & cultural events</li>
-                            <li>🏄 Surf breaks & pristine beaches</li>
-                            <li>🛒 Organic markets & local shops</li>
-                            <li>🏥 Medical facilities</li>
+                            <li>World-class restaurants & cafes</li>
+                            <li>Art galleries & cultural events</li>
+                            <li>Surf breaks & pristine beaches</li>
+                            <li>Organic markets & local shops</li>
+                            <li>Medical facilities</li>
                         </ul>
                     </div>
                 </div>
@@ -1431,7 +1529,7 @@
             <div class="section-header">
                 <div class="section-subtitle">Let's Connect</div>
                 <h2>Schedule Your Private Tour</h2>
-                <p style="max-width: 700px; margin: 1rem auto; color: var(--text-secondary);">
+                <p style="max-width: 700px; margin: 1rem auto; color: var(--text-secondary); font-size: 0.95rem;">
                     Experience this extraordinary property in person. Fill out the form below and I'll contact you within a few hours to arrange your visit.
                 </p>
             </div>
@@ -1489,14 +1587,14 @@
                         <button type="submit" class="submit-button">Send Message</button>
 
                         <div class="success-message" id="successMessage">
-                            ✓ Thank you! I'll contact you within a few hours to schedule your visit.
+                            Thank you! I'll contact you within a few hours to schedule your visit.
                         </div>
                     </form>
                 </div>
 
                 <div class="contact-info-card">
                     <div class="contact-info-item">
-                        <h4>📞 Phone</h4>
+                        <h4>Phone</h4>
                         <p>
                             <a href="tel:+526122381676">+52 612-238-1676</a><br>
                             Available 7 days a week<br>
@@ -1505,7 +1603,7 @@
                     </div>
 
                     <div class="contact-info-item">
-                        <h4>📧 Email</h4>
+                        <h4>Email</h4>
                         <p>
                             <a href="mailto:perla@ricardoamigo.com">perla@ricardoamigo.com</a><br>
                             Response within 24 hours
@@ -1513,7 +1611,7 @@
                     </div>
 
                     <div class="contact-info-item">
-                        <h4>💬 WhatsApp</h4>
+                        <h4>WhatsApp</h4>
                         <p>
                             <a href="https://wa.me/526122381676">Click to chat</a><br>
                             Instant messaging available
@@ -1521,7 +1619,7 @@
                     </div>
 
                     <div class="contact-info-item">
-                        <h4>📍 View on Map</h4>
+                        <h4>View on Map</h4>
                         <p>
                             <a href="https://maps.app.goo.gl/DuApQ1pBX7L5i7D26" target="_blank">Open in Google Maps</a><br>
                             Las Playitas, Todos Santos
@@ -1529,7 +1627,7 @@
                     </div>
 
                     <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.1);">
-                        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
                             Your information is protected and will never be shared. I respect your privacy and will only use your contact details to respond to your inquiry about this property.
                         </p>
                     </div>
@@ -1546,7 +1644,7 @@
                     <h4>Perla Garnica</h4>
                     <p>Real Estate Specialist</p>
                     <p>Ricardo Amigo Real Estate</p>
-                    <p style="margin-top: 1rem; font-size: 0.95rem; opacity: 0.8;">
+                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
                         Serving Todos Santos & Baja California Sur
                     </p>
                 </div>
@@ -1664,30 +1762,15 @@
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Here you would typically send the form data to your server
-            // For now, we'll just show the success message
-            
             successMessage.classList.add('show');
             contactForm.reset();
             
-            // Hide success message after 5 seconds
             setTimeout(() => {
                 successMessage.classList.remove('show');
             }, 5000);
-            
-            // In production, you would do something like:
-            // const formData = new FormData(contactForm);
-            // fetch('/api/contact', {
-            //     method: 'POST',
-            //     body: formData
-            // }).then(response => response.json())
-            //   .then(data => {
-            //       successMessage.classList.add('show');
-            //       contactForm.reset();
-            //   });
         });
 
-        // Add animation on scroll (optional enhancement)
+        // Add animation on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1702,7 +1785,6 @@
             });
         }, observerOptions);
 
-        // Observe all major sections (optional - adds fade-in effect)
         document.querySelectorAll('section').forEach(section => {
             section.style.opacity = '0';
             section.style.transform = 'translateY(20px)';
